@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+    };
+    </script>   
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sets and Powers of Two</title>
+
+    <!-- IMPORTANT: go up one folder -->
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Sets and Powers of Two</h1>
+</header>
+
+<div class="container">
+
+    <div class="post">
+        <h2>Problem</h2>
+        <p>
+            Let $n$ be a positive integer. Initially the sequence $0,0,\cdots,0$ ($n$ times) is written on 
+            the board. In each round, Ananya choses an integer $t$ and a subset of the numbers written on 
+            the board and adds $t$ to all of them. What is the minimum number of rounds in which Ananya can 
+            make the sequence on the board strictly increasing?
+        </p>
+
+        <h2>Solution</h2>
+        <p>
+            This was a pretty nice problem from the Indian EGMO TST 2025 Day 1.
+        </p>
+
+        <p>
+            The answer is $\left\lceil \log_2(n) \right\rceil$ for all $n$. First we show the answer for
+            $n=2^k$ the answer is $k$. Note the constructions end with the list increasing in the 
+            following way: $0, 1, 2, \dots n-1$.
+        </p>
+
+        <p>
+            We do this using induction, the base case is pretty simple then assume for some list with 
+            $2^{q-1}$ zeroes the result holds. Then in the list with $2^q$ zeroes, from position $2^{q-1} 
+            + 1$ we add $t = 2^{q-1}$, and split our list into two halves. By the induction hypothesis 
+            these two halves require $q-1$ steps so including our first step that turns into $q$, 
+            completing the induction.
+        </p>
+
+        <p style="text-align: center;">$0,0,0,0,0,0,0,0$</p>
+        <p style="text-align: center;">$0,0,0,0,4,4,4,4$</p>
+        <p style="text-align: center;">$\cdots$</p>
+        <p style="text-align: center;">$0,1,2,3,4,5,6,7$</p>
+
+        <p>
+            We now choose a $2^{k-1} < n < 2^k$. Again, split it into two parts with one of the parts
+            having length of the largest power of two in $n$(that is, the length is $2^{k-1}$). 
+            The longer part would require the most steps to arrange into ascending order so we consider 
+            that only, by above we know it should be $k-1$ so our required answer is $k-1+1 = k$. So this 
+            value is achievable.
+        </p>
+
+        <p style="text-align:center;">$0,0,0,0,0,0,0,0$</p>
+        <p style="text-align:center;">$\boxed{0,0,0,0,0,0,0} 0$</p>
+        <p style="text-align:center;">The boxed portion requires $3$ steps so our answer for $n=9$ is $4$.</p>
+        
+        <p>
+            To show this is the minimum value, it suffices to show $2^k \ge n$ when $k$ is the number of rounds.
+            However this is simple as the rounds are in the set $\left\{ 1, 2, \dots, k\right\}$ and for each number 
+            there must be a unique subset of this set of rounds as the ending is strictly increasing, so we get our desired result. $\square$
+        </p>
+
+        <p><a href="../../index.html" class="read-more">← Back</a></p>
+    </div>
+
+</div>
+
+</body>
+</html>

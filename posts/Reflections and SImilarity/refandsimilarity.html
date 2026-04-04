@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+    };
+    </script>   
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflections and Similarity</title>
+
+    <!-- IMPORTANT: go up one folder -->
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Reflections and Similarity</h1>
+</header>
+
+<div class="container">
+
+    <div class="post">
+        <h2>Problem</h2>
+        <p>
+            Let $ABC$ be a triangle. The tangent in $A$ of the circumcircle of $ABC$ cuts the line $(BC)$ 
+            in $X$. Let $A'$ be the symmetric of $A$ by $X$ and $C'$ the symmetric of $C$ by the line $(AX)$
+            Prove that the points $A, C', A'$ and $B$ are concyclic.
+        </p>
+
+        <h2>Solution</h2>
+        <p>
+            This was a cool problem from the Moroccan TST 2019. Anywho, here's my solution to it(sorry for
+            bad asy :P).
+        </p>
+
+        <img src="asy.png">
+
+        <p>
+            We let $T$ be the reflection of $C$ through $X$ so that $ACA'T$ is a parallelogram. We see it 
+            suffices to show $\angle A'C'B = \angle A'AB = \angle C$.
+        </p>
+
+        <p>
+            Note line $A'A$ is perpendicular to $CC'$ so we have $\angle A'CA = \angle A'C'A \Rightarrow 
+            \angle AC'B+ \angle BC'A = \angle ACT + \angle C $ so all that's left to do this show
+            $\angle BC'A = \angle ACT = \angle ATX$
+        </p>
+
+        <p>
+            We see $\triangle C'AX \sim \triangle AXB$ and from some length chasing we also get 
+            $\triangle C'AB \sim \triangle CXT$ which basically does it as now we have $\angle BC'A
+            = \angle ATX$ directly. :D
+        </p>
+
+        <p><a href="../../index.html" class="read-more">← Back</a></p>
+    </div>
+
+</div>
+
+</body>
+</html>
