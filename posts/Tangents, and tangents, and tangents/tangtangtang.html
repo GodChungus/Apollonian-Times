@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+    };
+    </script>   
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tangents, and tangents, and tangents...</title>
+
+    <!-- IMPORTANT: go up one folder -->
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Tangents, and tangents, and tangents...</h1>
+</header>
+
+<div class="container">
+
+    <div class="post">
+        <h2>Problem</h2>
+        <p>
+            Let $\omega_1$ and $\omega_2$ be circles , intersecting at $A$ and $B$.The common tangent , closer to $A$ , of $\omega_1$ and
+            $\omega_2$ touches them at $P$ abd $Q$ respectively.The tangent of $\omega_1$ at $A$ intersects $\omega_2$ at $C$ , which is
+            different from $A$ and the extention of $AP$ meets line $QC$ at $D$.Let $E$ be circumcenter of $ABD$.Lines $AD$ and $QE$ 
+            intersect at $F$.Prove that $F$ lies on circle with diameter $PQ$
+        </p>
+
+        <h2>Solution</h2>
+        <p>
+            Nice problem from EMC 2025. There are a lot of tangents, and actually this is deadly similar to Nepal's 
+            PTST 2026 P6. I actually skillissued quite a bit on this in the exact same part though, which was to show a 
+            certain cyclicity, the rest was easy though. Enjoy this problem:
+        </p>
+
+        <img src="asy.png">
+
+        <p>
+            First we show that $P, B, D, Q$ is cyclic. Note angles are directed here, we have:<br><br><br>
+
+
+            $\measuredangle PBQ = \measuredangle PBA + \measuredangle ABQ = \measuredangle DAC + \measuredangle ACD = \measuredangle ADQ = \measuredangle PDQ$<br><br><br>
+
+
+            So it is cyclic. Now we want to show that $QAED$ is a kite, which since $EA=ED$ is just a matter of showing $QA=QD$. This is simple however, as:<br><br><br>
+
+            
+            $\measuredangle ADQ = \measuredangle PDQ = \measuredangle PBQ = \measuredangle PBA + \measuredangle ABQ = \measuredangle QPA + \measuredangle AQP = \measuredangle QAD$<br><br><br>
+
+
+            Which gives $QA=QD$, so it is a kite and we're done by the perpendicularity condition of the diagonals of a kite. $\square$
+        </p>
+        <p><a href="../../index.html" class="read-more">← Back</a></p>
+    </div>
+
+</div>
+
+</body>
+</html>
