@@ -44,7 +44,8 @@
 
         <p>
             Uncle Qiang would like to perform a series of up to $k$ moves so that it is possible to exit the house from any room by following
-            only outgoing one-way doors. Find the smallest number $k$ such that this is always possible.
+            only outgoing one-way doors. Find the smallest number $k$ such that this is always possible. This problem was from the IMSC
+            2026 Mock IMO Day 1, Problem 1.
         </p>
 
         <h2>Solution</h2>
@@ -74,7 +75,9 @@
         </p>
 
         <p>
-            
+            Now since we have removed all ways to go up, Uncle Qiang can only go down. If, he does not escape already, then that means he must
+            reach a point where he can only go left or right. This solves the problem, as there cannot be two arrows facing each other in 
+            adjacent rooms(thus blocking him from exiting), so he can just follow one of the directions to exit the grid, we're done.
         </p>
 
 
