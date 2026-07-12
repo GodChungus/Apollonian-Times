@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+    };
+    </script>   
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrows, and arrows, and arrows...</title>
+
+    <!-- IMPORTANT: go up one folder -->
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Arrows, and arrows, and arrows...</h1>
+</header>
+
+<div class="container">
+
+    <div class="post">
+        <h2>Problem</h2>
+        <p>
+            Uncle Qiang's house consists of a $2026 \times 2026$ grid of $1 \times 1$ rooms. Every room has four walls, exactly one of which
+            contains an outgoing one way door. If the wall is between two adjacent rooms, then the door leads from one room to the other. If
+            the wall is on the perimeter of the house then the door leads outside. In every room, each of the four walls has at most one 
+            door, which leads either into or out of the room. There are no incoming doors from outside of the house.
+        </p>
+
+        <p>
+            Uncle Qiang wants to redesign the house by performing <i>moves</i>: in a move, he chooses a room whose four walls are not all 
+            occupied by doors. He then removes that room's outgoing one-way door and replaces it with a new outgoing one-way door through one
+            of its walls not occupied by a door.
+        </p>
+
+        <p>
+            Uncle Qiang would like to perform a series of up to $k$ moves so that it is possible to exit the house from any room by following
+            only outgoing one-way doors. Find the smallest number $k$ such that this is always possible.
+        </p>
+
+        <h2>Solution</h2>
+
+        <p>
+            I'd like to preface this by saying that this problem is an absolute yap fest. Anyways, I was able to (slightly) easily solve this
+            due to the resemblance of this problem with Nepal TST 2025/5, so there's that I guess(I'm very experienced with drawing arrows now).
+        </p>
+
+        <p>
+            We claim that the answer is $1013^2$. In general, for any $n \times n$ board where $n$ is even, the answer will be
+            $\left( \frac n2 \right)^2$. Obviously, like a gangster, we prove the statement for general $n$.
+        </p>
+
+        <p>
+            For the construction, we consider a $2\times2$ subgrid where going through any room leads to a repeating cycle of going through
+            the four rooms. Since $n$ is even, we can fill the $n\times n$ board with such squares. Obviously, to stop the cycle, we must apply a 
+            move to at least one of the four doors, leaving us with a total of $\frac 14 \left( n \right)^2$
+        </p>
+
+
+        <p><a href="../../index.html" class="read-more">← Back</a></p>
+    </div>
+
+</div>
+
+</body>
+</html>
