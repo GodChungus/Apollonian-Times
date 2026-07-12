@@ -62,7 +62,19 @@
         <p>
             For the construction, we consider a $2\times2$ subgrid where going through any room leads to a repeating cycle of going through
             the four rooms. Since $n$ is even, we can fill the $n\times n$ board with such squares. Obviously, to stop the cycle, we must apply a 
-            move to at least one of the four doors, leaving us with a total of $\frac 14 \left( n \right)^2$
+            move to at least one of the four doors, leaving us with a total of $\frac 14 \left( n \right)^2$ moves, or $\left( \frac n2 \right)^2$
+            moves. All right folks, now on to the annoying part!
+        </p>
+
+        <p>
+            We now show that this is the minimum required. Consider only the <b>outgoing</b> doors of each room, and denote by it an arrow that
+            points to the room it leads to. Let the four cardinal directions up, down, left, and right be where the arrows point to. Note that
+            there exists two directions which appear at most $\left( \frac n2 \right)^2$ times. WLOG, let us consider one of the them to be
+            the doors pointing up, then flip them such that they now point down. Uncle Qiang can perform this columnwise without an issue.
+        </p>
+
+        <p>
+            
         </p>
 
 
